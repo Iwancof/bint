@@ -34,7 +34,7 @@ class bint {
 
     int _convert_to_int_non_sign(bint x) { //x.valueを符号を無視して読み取る
       int res = 0;
-      printf("size:%d,digit:%d\n",x.value.size(),x.digit);
+      printf("test::size:%d,digit:%d\n",x.value.size(),x.digit);
       for(int i = 0;i < x.digit;i++) {
         cout << x.value[i] << endl;
         res += x.value[i] * pow(2,i);
@@ -64,7 +64,10 @@ class bint {
     }
 
     int convert_to_int() {
-      printf("in convert_int_int, size:%d,digit%d\nand ",
+      printf("in convert_to_int, size:%d,digit%d\n",value.size(),digit);
+      for(int i = 0;i < 5;i++) {
+        cout << "index:" + to_string(i) + ",value = " + to_string(value[i]) << endl;
+      }
       return _convert_to_int_sign(*this);
     }
 
@@ -140,7 +143,7 @@ int main(void) {
 
   printf("size:%d,digit:%d\n",v.value.size(),v.digit);
 
-  cout << v.convert_to_int() << endl;
+  cout << "value = " + to_string(v.convert_to_int()) << endl;
 
   /*
   vector<bool> bv1{false,false,true,true}; //3;
